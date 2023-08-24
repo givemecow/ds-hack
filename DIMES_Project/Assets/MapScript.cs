@@ -17,23 +17,28 @@ public class MapScript : MonoBehaviour
         
     }
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene("map1");
+    }
+
     public void OnMouseDown()
     {
-
         string sceneName = SceneManager.GetActiveScene().name;
+        Debug.Log(sceneName);
         if (sceneName == "start")
         {
-            SceneManager.LoadScene("Map1");
+            SceneManager.LoadScene("map1");
         }
-        if (sceneName == "Map1")
+        if (sceneName == "map1")
         {
             SceneManager.LoadScene("Level1");
         }
-        if (sceneName == "Map2")
+        if (sceneName == "map2")
         {
             SceneManager.LoadScene("Level2");
         }
-        if (sceneName == "Map3")
+        if (sceneName == "map3")
         {
             SceneManager.LoadScene("Level3");
         }
