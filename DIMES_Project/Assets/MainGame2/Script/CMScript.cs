@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CMScript : MonoBehaviour
 {
-    public GameObject target; // Ä«¸Þ¶ó°¡ µû¶ó°¥ ´ë»ó
-    public float moveSpeed; //Ä«¸Þ¶ó°¡ ¾ó¸¶³ª ºü¸¥¼Óµµ·Î
-    private Vector3 targetPosition; //´ë»óÀÇ ÇöÀç À§Ä¡°ª
+    public GameObject target; // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+    public float moveSpeed; //Ä«ï¿½Þ¶ï¿½ ï¿½ó¸¶³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½
+    private Vector3 targetPosition; //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class CMScript : MonoBehaviour
     {
         if(target.gameObject !=null)
         {
-            targetPosition.Set(target.transform.position.x,target.transform.position.y,this.transform.position.z);
+            targetPosition.Set(target.transform.position.x+3f,target.transform.position.y,this.transform.position.z);
             this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
         }
