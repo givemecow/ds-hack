@@ -334,7 +334,11 @@ GameObject:
   - component: {fileID: 205919412}
   - component: {fileID: 205919411}
   - component: {fileID: 205919413}
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  m_Layer: 6
+>>>>>>> 03ab03b37ac2ca09553bb416721be3666f90347c
   m_Name: Spikes
   m_TagString: Enemy
   m_Icon: {fileID: 0}
