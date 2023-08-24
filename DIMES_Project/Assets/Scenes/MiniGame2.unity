@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &150668365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150668367}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &150668367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150668365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16592357, y: -0.08880678, z: -0.07184547}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &530136208
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,18 +361,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9e89423e386854d9e281040c02bc5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 5291392423756151723, guid: 66ec94ce5183d3f489c490a70c1f0db1, type: 3}
+  cardPrefab: {fileID: 7467142371159270063, guid: 194b75cbe3ac3b84e8f0ed8d40faa4dc, type: 3}
   cardSprites:
-  - {fileID: -163537274, guid: 428be99f7d703de44aab00c00d057aa3, type: 3}
-  - {fileID: 1428743643, guid: 428be99f7d703de44aab00c00d057aa3, type: 3}
-  - {fileID: 2109231258, guid: 428be99f7d703de44aab00c00d057aa3, type: 3}
-  - {fileID: -1325049412, guid: 428be99f7d703de44aab00c00d057aa3, type: 3}
-  - {fileID: 117514476, guid: 428be99f7d703de44aab00c00d057aa3, type: 3}
-  - {fileID: -168681046, guid: 428be99f7d703de44aab00c00d057aa3, type: 3}
-  - {fileID: -721132931, guid: 1a4e8733e2a019b43af8c26107170116, type: 3}
-  - {fileID: -818270469, guid: 1a4e8733e2a019b43af8c26107170116, type: 3}
-  - {fileID: -699449907, guid: 1a4e8733e2a019b43af8c26107170116, type: 3}
-  - {fileID: 619531549, guid: 1a4e8733e2a019b43af8c26107170116, type: 3}
+  - {fileID: 21300000, guid: 0eda54ef844c979499061cc0d728cf36, type: 3}
+  - {fileID: 21300000, guid: 468459a657e724a429cf2420700d8823, type: 3}
+  - {fileID: 21300000, guid: f2184e8a1be4c2048a75ec70221e1632, type: 3}
+  - {fileID: 21300000, guid: 2e14d1c7d161a6848b2c1cf22af4d078, type: 3}
+  - {fileID: 21300000, guid: 1ac916cb5979dcd4889dd03451533315, type: 3}
+  - {fileID: 21300000, guid: e349e317bfbdabb4cb3a1548f2047d58, type: 3}
+  - {fileID: 21300000, guid: 2ee1d182618c5ec4ba8d3f057f1a891e, type: 3}
+  - {fileID: 21300000, guid: 2e38df7ed8591d64fb32937444dcfafe, type: 3}
+  - {fileID: 21300000, guid: bfd6b746d3134be49969279ca5c7f6d1, type: 3}
+  - {fileID: 21300000, guid: 53757bfaaad37d74a8ae217a95926229, type: 3}
 --- !u!4 &1542836633
 Transform:
   m_ObjectHideFlags: 0
