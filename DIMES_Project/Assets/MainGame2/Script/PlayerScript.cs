@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
+    private int jump=0;
 
     Vector3 targetPosition = new Vector3(-8.0f, 0.7f, 0.0f);
     float yThreshold = -12.0f;
@@ -53,8 +54,16 @@ public class PlayerScript : MonoBehaviour
         //jump
         if (Input.GetButtonDown("Jump"))
         {
-            rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-            anim.SetBool("jumping", true);
+
+            if (jump < 2)
+            {
+                jump++;
+                rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+                anim.SetBool("jumping", true);
+                
+
+            }
+            
         }
 
         //Landing Platform
@@ -64,8 +73,12 @@ public class PlayerScript : MonoBehaviour
             RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platform"));
             if (rayHit.collider != null)
             {
-                if (rayHit.distance < 0.3f)
+                if (rayHit.distance < 0.3f) 
+                {
                     anim.SetBool("jumping", false);
+                    jump = 0;
+                }
+                    
             }
         }
 
