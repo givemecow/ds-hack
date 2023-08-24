@@ -8,6 +8,7 @@ TagManager:
   - Me
   - Item
   - Enemy
+  - Star
   layers:
   - Default
   - TransparentFX
