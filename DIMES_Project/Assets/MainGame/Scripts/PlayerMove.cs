@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
+    private int jump = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +51,13 @@ public class PlayerMove : MonoBehaviour
         //jump
         if (Input.GetButtonDown("Jump"))
         {
-            rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-            anim.SetBool("jumping", true);
+            if (jump < 2)
+            {
+                jump++;
+                rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+                anim.SetBool("jumping", true);
+            }
+
         }
 
         //Landing Platform
@@ -62,7 +68,11 @@ public class PlayerMove : MonoBehaviour
             if (rayHit.collider != null)
             {
                 if (rayHit.distance < 0.2f)
+                {
                     anim.SetBool("jumping", false);
+                    jump = 0;
+                }
+
             }
         }
 
