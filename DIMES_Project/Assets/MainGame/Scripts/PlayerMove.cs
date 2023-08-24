@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     private int jump = 0;
+    public GameObject UIManager;
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +96,7 @@ public class PlayerMove : MonoBehaviour
         {
             //point
             GameManager.instance.addHP();
+
 
             //Deactive Item
             collision.gameObject.SetActive(false);
