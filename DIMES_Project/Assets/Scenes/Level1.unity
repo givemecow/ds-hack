@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 205919412}
   - component: {fileID: 205919411}
   - component: {fileID: 205919413}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Spikes
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2992,7 +2992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1537432156}
   - component: {fileID: 1537432155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
