@@ -14,6 +14,12 @@ public class Board : MonoBehaviour
     private List<Card> cardList = new List<Card>();
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        GameManager.instance.forCardGame();
+    }
+
     void Start()
     {
         GenerateCardID();

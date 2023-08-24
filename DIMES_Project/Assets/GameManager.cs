@@ -1,15 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private int mode; // 1 - 메인 스테이지 2- 미니게임2
+
+    // minigame2
     private List<Card> allCards;
     private Card flippedCard;
     private bool isFlipping = false;
     private int matchesFound = 0;
     private int totalMatches = 10;
+
+    //main
+    private int stageHP = 3;
+    private int stageStar = 0;
+    private Canvas canvas;
 
     private void Awake()
     {
@@ -17,10 +26,35 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        // Don't destroy this when move scenes.
+        DontDestroyOnLoad(instance);
+
     }
 
     // Start is called before the first frame update
     void Start()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName == "Level1" || sceneName == "Level1" || sceneName == "Level1")
+        {
+
+        } else if (sceneName == "MiniGame2")
+        {
+
+        }
+    }
+
+    public void forMainGame()
+    {
+        canvas = FindObjectOfType<Canvas>();
+    }
+
+    public void forCardGame()
     {
         Board board = FindObjectOfType<Board>();
         allCards = board.GetCards();
@@ -78,7 +112,7 @@ public class GameManager : MonoBehaviour
 
             if (matchesFound == totalMatches)
             {
-                GameOver();
+                CardGameOver();
             }
         }
         else
@@ -95,8 +129,41 @@ public class GameManager : MonoBehaviour
         flippedCard = null;
     }
 
-    void GameOver()
+    void CardGameOver()
     {
-        Debug.Log("Game Success");
+        SceneManager.LoadScene("map2");
+    }
+
+    public void loseHP()
+    {
+        Debug.Log("hp " + stageHP);
+        if (stageHP < 5 && stageHP > 0)
+        {
+            stageHP--;
+        }
+        if (stageHP < 0)
+        {
+            SceneManager.LoadScene("finish");
+        }
+    }
+
+    public void addHP()
+    {
+        stageHP++;
+    }
+
+    public void addStar()
+    {
+        stageStar++;
+        Debug.Log("star " + stageStar);
+    }
+    public int getStar()
+    {
+        return stageHP;
+    }
+
+    public int getHp()
+    {
+        return stageStar;
     }
 }
