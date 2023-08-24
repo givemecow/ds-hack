@@ -10,9 +10,7 @@ public class PlayerScript : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
 
-    public static int k;
-
-    Vector3 targetPosition = new Vector3(-7.0f, 0.5f, 0.0f);
+    Vector3 targetPosition = new Vector3(-8.0f, 0.7f, 0.0f);
     float yThreshold = -12.0f;
 
     // Start is called before the first frame update
@@ -21,7 +19,6 @@ public class PlayerScript : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        k = 0;
     }
 
     // Update is called once per frame
@@ -72,14 +69,59 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-
-        if(transform.position.y <= yThreshold)
+        //떨어지면 제자리
+        if (transform.position.y <= yThreshold)
         {
             transform.position = targetPosition;
         }
 
     }
 
- 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            OnDamaged(collision.transform.position);
+        }
+    }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Item")
+        {
+            //point
+            /*if(GameManager.instance.stageHP < 5)
+                GameManager.instance.stageHP += 1;*/
+
+            //Deactive Item
+            collision.gameObject.SetActive(false);
+        }
+        else if (collision.gameObject.tag == "Finish")
+        {
+            //Next stage
+        }
+    }
+
+    void OnDamaged(Vector2 targetPos)
+    {
+        //Change Layer (Immortal Active)
+        gameObject.layer = 10;
+        //View Alpha
+        spriteRenderer.color = new Color(1, 1, 1, 0.5f);
+        //Reaction Force
+        int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
+        rigid.AddForce(new Vector2(dirc, 1) * 5, ForceMode2D.Impulse);
+
+        //animation
+        anim.SetTrigger("damaged");
+
+        Invoke("OffDamaged", 3);
+
+    }
+
+    void OffDamaged()
+    {
+        gameObject.layer = 9;
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+    }
 }
