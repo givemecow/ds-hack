@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     private int jump=0;
+    public GameObject UIManager;
 
     Vector3 targetPosition = new Vector3(-8.0f, 0.7f, 0.0f);
     float yThreshold = -12.0f;

@@ -22,6 +22,11 @@ public class MapScript : MonoBehaviour
         SceneManager.LoadScene("map1");
     }
 
+    public void NextGame()
+    {
+        SceneManager.LoadScene("map2");
+    }
+
     public void OnMouseDown()
     {
         string sceneName = SceneManager.GetActiveScene().name;
