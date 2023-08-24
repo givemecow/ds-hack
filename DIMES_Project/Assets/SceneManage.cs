@@ -4,13 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class ClickManager : MonoBehaviour
+public class SceneManage : MonoBehaviour
 {
 
-    List<string> sc = new List<string>(new string[] { "Level1", "Level2", "Level3", "MiniGame2" });
     public void MoveLevel()
     {
         SceneManager.LoadScene(""); // 레벨 씬 추가 후 변경 피룡
+    }
+
+    public void MoveMap1()
+    {
+        SceneManager.LoadScene("Map1");
     }
 
     public void MoveMain1()
@@ -18,15 +22,26 @@ public class ClickManager : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
-
-    public void MoveMini1()
+    public void MoveMini2()
     {
-        SceneManager.LoadScene("Room 1"); // 미니게임1 추가 후 변경 필요
+        SceneManager.LoadScene("MiniGame2");
     }
+
+
+    public void MoveMap2()
+    {
+        SceneManager.LoadScene("Map2");
+    }
+
 
     public void MoveMain2()
     {
         SceneManager.LoadScene("Level2");
+    }
+
+    public void MoveMap3()
+    {
+        SceneManager.LoadScene("Map3");
     }
 
     public void MoveMain3()
@@ -34,10 +49,12 @@ public class ClickManager : MonoBehaviour
         SceneManager.LoadScene("Level3");
     }
 
-    public void MoveMini2()
+
+    public void MoveClear()
     {
-        SceneManager.LoadScene("MiniGame2");
+        SceneManager.LoadScene("Clear");
     }
+
 
     public void NextScene(string str)
     {

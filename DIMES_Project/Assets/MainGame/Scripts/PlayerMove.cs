@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
+    public GameObject sceneM;
     public float maxSpeed;
     public float jumpPower;
     Rigidbody2D rigid;
@@ -99,7 +101,19 @@ public class PlayerMove : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Finish")
         {
-            //Next stage
+            string sceneName = SceneManager.GetActiveScene().name;
+            if (sceneName== "Level1")
+            {
+                SceneManager.LoadScene("MiniGame2");
+            }
+            if (sceneName == "Level2")
+            {
+                SceneManager.LoadScene("Map3");
+            }
+            if (sceneName == "Level3")
+            {
+                SceneManager.LoadScene("Clear");
+            }
         }
     }
 
