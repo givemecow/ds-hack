@@ -141,9 +141,9 @@ public class GameManager : MonoBehaviour
         {
             stageHP--;
         }
-        if (stageHP < 0)
+        if (stageHP < 1)
         {
-            SceneManager.LoadScene("finish");
+            SceneManager.LoadScene("over");
         }
     }
 
@@ -159,11 +159,11 @@ public class GameManager : MonoBehaviour
     }
     public int getStar()
     {
-        return stageHP;
+        return stageStar;
     }
 
     public int getHp()
     {
-        return stageStar;
+        return stageHP;
     }
 }

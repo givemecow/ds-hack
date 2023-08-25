@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     private int jump = 0;
+    [SerializeField]
     public GameObject UIManager;
 
     // Start is called before the first frame update
@@ -86,6 +87,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             GameManager.instance.loseHP();
+            UIManager.GetComponent<UIManager>().minusHP();
             OnDamaged(collision.transform.position);
         }
     }
@@ -96,7 +98,7 @@ public class PlayerMove : MonoBehaviour
         {
             //point
             GameManager.instance.addHP();
-
+            UIManager.GetComponent<UIManager>().addHP();
 
             //Deactive Item
             collision.gameObject.SetActive(false);
@@ -104,6 +106,7 @@ public class PlayerMove : MonoBehaviour
         else if(collision.gameObject.tag == "Star")
         {
             GameManager.instance.addStar();
+            UIManager.GetComponent<UIManager>().addStar();
         }
         else if (collision.gameObject.tag == "Finish")
         {

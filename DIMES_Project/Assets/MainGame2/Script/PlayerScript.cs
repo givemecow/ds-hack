@@ -97,6 +97,7 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             GameManager.instance.loseHP();
+            UIManager.GetComponent<UIManager>().minusHP();
             OnDamaged(collision.transform.position);
         }
     }
@@ -107,6 +108,7 @@ public class PlayerScript : MonoBehaviour
         {
             //point
             GameManager.instance.addHP();
+            UIManager.GetComponent<UIManager>().addHP();
 
             //Deactive Item
             collision.gameObject.SetActive(false);
@@ -114,6 +116,7 @@ public class PlayerScript : MonoBehaviour
         else if (collision.gameObject.tag == "Star")
         {
             GameManager.instance.addStar();
+            UIManager.GetComponent<UIManager>().addStar();
         }
         else if (collision.gameObject.tag == "Finish")
         {

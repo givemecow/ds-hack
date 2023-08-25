@@ -30,6 +30,10 @@ public class UIManager : MonoBehaviour
     {
         starCount = GameManager.instance.getStar();
         heartCount = GameManager.instance.getHp();
+        if (heartCount < 1)
+        {
+            heartCount++;
+        }
 
         for (int i = 0; i < starCount; i++)
         {
