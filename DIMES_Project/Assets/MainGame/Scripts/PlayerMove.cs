@@ -85,7 +85,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            GameManager.instance.loseHP();
+            //GameManager.instance.loseHP();
             OnDamaged(collision.transform.position);
         }
     }
